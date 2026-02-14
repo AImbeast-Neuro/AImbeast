@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AImbeast 2.0 | Будущее нейросетевых читов</title>
+    
+    <title>AImbeast 2.0 | Next-Gen AI Software | Undetected</title>
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #00a2ff;
@@ -15,7 +20,7 @@
             --tg-direct: #24A1DE;
         }
 
-        html { scroll-behavior: smooth; } /* Плавный скролл */
+        html { scroll-behavior: smooth; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -89,6 +94,49 @@
         .f-card h3 { color: var(--primary); margin-bottom: 12px; font-family: 'Orbitron', sans-serif; font-size: 1.2rem; }
         .f-card p { font-size: 0.9rem; color: #888; }
 
+        /* БЛОК СКРИНШОТА */
+        .preview-section {
+            padding: 20px 0 60px;
+            text-align: center;
+        }
+        .interface-wrapper {
+            display: inline-block;
+            position: relative;
+            padding: 8px;
+            background: linear-gradient(45deg, var(--primary), transparent, var(--primary));
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 162, 255, 0.2);
+            max-width: 100%;
+            transition: 0.5s;
+        }
+        .interface-wrapper:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 0 60px rgba(0, 162, 255, 0.4);
+        }
+        .interface-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid #000;
+        }
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            box-shadow: 0 0 15px var(--primary);
+            z-index: 2;
+        }
+
         /* Цены */
         .pricing-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin: 80px 0 40px; }
         .pricing-grid {
@@ -127,7 +175,7 @@
         }
         .price-card.lifetime .btn-buy { background: var(--accent); color: #000; }
 
-        /* Прямая связь */
+        /* Связь */
         .direct-buy { text-align: center; margin-bottom: 80px; }
         .btn-direct {
             display: inline-flex;
@@ -181,6 +229,13 @@
                 <div class="f-card"><h3>Smart Prediction</h3><p>Умное упреждение по движущимся целям.</p></div>
                 <div class="f-card"><h3>24/7 Support</h3><p>Помощь в настройке и установке в любое время.</p></div>
             </div>
+
+            <div class="preview-section">
+                <div class="interface-wrapper">
+                    <div class="badge">LIVE INTERFACE</div>
+                    <img src="/interface.png" alt="AImbeast 2.0 Interface" class="interface-img">
+                </div>
+            </div>
         </section>
 
         <section id="pricing">
@@ -219,7 +274,6 @@
     </div>
 
     <script>
-        // Простой скрипт для FAQ
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const answer = item.nextElementSibling;
