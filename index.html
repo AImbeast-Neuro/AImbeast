@@ -33,7 +33,7 @@
         .status-box { margin-bottom: 30px; padding: 12px 25px; border: 1px solid rgba(0, 255, 136, 0.3); display: inline-block; border-radius: 50px; font-size: 0.9rem; background: rgba(0, 255, 136, 0.05); font-family: 'Orbitron', sans-serif; }
         .status-dot { height: 10px; width: 10px; background-color: #00ff88; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 12px #00ff88; }
         
-        /* СЕТКА ПРЕИМУЩЕСТВ - 6 ПЛАШЕК */
+        /* СЕТКА ПРЕИМУЩЕСТВ */
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 50px 0; }
         .f-card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #1f1f23; text-align: left; transition: 0.3s; }
         .f-card:hover { border-color: var(--primary); transform: translateY(-5px); }
@@ -44,16 +44,31 @@
         .interface-wrapper { display: inline-block; position: relative; padding: 8px; background: linear-gradient(45deg, var(--primary), transparent, var(--primary)); border-radius: 20px; box-shadow: 0 0 40px rgba(0, 162, 255, 0.2); max-width: 100%; }
         .interface-img { display: block; max-width: 100%; height: auto; border-radius: 15px; border: 2px solid #000; }
 
-        /* ТАРИФЫ - ВСЕ 5 ЦЕН */
+        /* ТАРИФЫ */
         .pricing-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin: 60px 0 30px; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .price-card { background: #16161a; padding: 30px 15px; border-radius: 15px; text-align: center; border: 1px solid #222; transition: 0.3s; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .price-card { background: #16161a; padding: 30px 15px; border-radius: 15px; text-align: center; border: 1px solid #222; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
         .price-card:hover { border-color: var(--primary); transform: scale(1.03); }
         .price-card.hot { border-color: var(--accent); box-shadow: 0 0 15px rgba(255, 204, 0, 0.1); }
         .price-card h3 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; color: #ccc; margin-bottom: 15px; }
         .cost { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; display: block; font-family: 'Orbitron'; color: #fff; }
-        .btn-buy { display: block; background: var(--primary); color: #fff; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        .btn-buy { display: block; background: var(--primary); color: #fff; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; margin-top: auto; }
         .price-card.hot .btn-buy { background: var(--accent); color: #000; }
+
+        /* БЛОК КУПИТЬ НАПРЯМУЮ */
+        .direct-container { text-align: center; margin-bottom: 40px; }
+        .btn-direct { display: inline-block; background: transparent; border: 2px solid var(--tg-direct); color: var(--tg-direct); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-family: 'Orbitron', sans-serif; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; }
+        .btn-direct:hover { background: var(--tg-direct); color: #fff; box-shadow: 0 0 20px rgba(36, 161, 222, 0.3); }
+
+        .info-block { max-width: 800px; margin: 0 auto 60px; text-align: center; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border: 1px solid #111; }
+        .info-block h4 { font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 15px; }
+        .info-block p { color: #777; font-size: 0.95rem; }
+
+        /* FAQ */
+        .faq-section { max-width: 800px; margin: 0 auto 100px; }
+        .faq-item { background: var(--card-bg); margin-bottom: 10px; border-radius: 12px; border: 1px solid #1f1f23; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; color: var(--primary); font-weight: bold; }
+        .faq-answer { padding: 0 20px 20px; color: #888; font-size: 0.9rem; display: none; }
 
         footer { padding: 60px 0 30px; text-align: center; color: #333; font-size: 0.8rem; border-top: 1px solid #111; }
     </style>
@@ -74,12 +89,12 @@
             <h1>The Power of AI</h1>
             
             <div class="features">
-                <div class="f-card"><h3>No Injection</h3><p>Никакого внедрения в память игры. Полная защита от автоматических банов.</p></div>
-                <div class="f-card"><h3>AI Recognition</h3><p>Нейросеть YOLOv8 распознает цели мгновенно по визуальным данным.</p></div>
-                <div class="f-card"><h3>Kernel Driver</h3><p>Использование скрытого драйвера для эмуляции мыши. 0 подозрений.</p></div>
-                <div class="f-card"><h3>Humanized Smoothing</h3><p>Настраиваемая плавность делает вашу стрельбу неотличимой от игры профи.</p></div>
-                <div class="f-card"><h3>Any Resolution</h3><p>Корректная работа на любых мониторах и разрешениях экрана.</p></div>
-                <div class="f-card"><h3>Auto-Updates</h3><p>Облачное обновление базы нейросети. Вам не нужно ничего перекачивать.</p></div>
+                <div class="f-card"><h3>No Injection</h3><p>Никакого внедрения в память игры. Полная защита от автоматических банов системы.</p></div>
+                <div class="f-card"><h3>AI Recognition</h3><p>Нейросеть YOLOv8 распознает цели мгновенно по визуальным данным экрана.</p></div>
+                <div class="f-card"><h3>Kernel Driver</h3><p>Использование скрытого драйвера для эмуляции мыши. Работает на низком уровне системы.</p></div>
+                <div class="f-card"><h3>Humanized Smoothing</h3><p>Настраиваемая плавность делает вашу стрельбу естественной и беспалевной.</p></div>
+                <div class="f-card"><h3>Full Customization</h3><p>Настраивайте зоны захвата, скорость и кнопки активации под свой стиль игры.</p></div>
+                <div class="f-card"><h3>Security First</h3><p>Софт не виден для скриншотеров и программ записи видео. Вы в полной безопасности.</p></div>
             </div>
 
             <div class="preview-section">
@@ -98,6 +113,39 @@
                 <div class="price-card" style="border-color: var(--primary);"><h3>30 ДНЕЙ</h3><span class="cost">1600₽</span><a href="https://t.me/AImbeastNeuro" class="btn-buy">Купить</a></div>
                 <div class="price-card hot"><h3>НАВСЕГДА</h3><span class="cost">3000₽</span><a href="https://t.me/AImbeastNeuro" class="btn-buy">Забрать</a></div>
             </div>
+            
+            <div class="direct-container">
+                <a href="https://t.me/naopadre" class="btn-direct">Купить напрямую в Telegram</a>
+            </div>
+
+            <div class="info-block">
+                <h4>Важная информация</h4>
+                <p>После оплаты вы получаете моментальный доступ к софту и подробную инструкцию по запуску. Техническая поддержка работает ежедневно и готова помочь с настройкой в любое время.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; font-family: 'Orbitron'; margin-bottom: 30px;">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Какие игры поддерживает софт? <span>+</span></div>
+                <div class="faq-answer">AImbeast оптимизирован для Warface, но благодаря AI-алгоритмам может работать во многих других популярных шутерах.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Есть ли риск получить бан? <span>+</span></div>
+                <div class="faq-answer">Наш софт работает без внедрения в файлы или память игры, что делает его максимально безопасным и необнаружимым для античитов.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Сложно ли настроить программу? <span>+</span></div>
+                <div class="faq-answer">Нет, настройка занимает около 5-10 минут. В комплекте идет пошаговый гайд, понятный даже новичку.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Нужна ли мощная видеокарта? <span>+</span></div>
+                <div class="faq-answer">Для стабильной работы нейросети рекомендуется видеокарта серии NVIDIA (от 1050 и выше) для быстрого отклика.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Что делать, если возникли проблемы? <span>+</span></div>
+                <div class="faq-answer">Вы всегда можете написать администратору напрямую в Telegram @naopadre — мы оперативно решим любую проблему с запуском.</div>
+            </div>
         </section>
 
         <footer>
@@ -108,16 +156,25 @@
     <script>
         function updateStats() {
             document.getElementById('online-now').innerText = Math.floor(Math.random() * (45 - 28 + 1)) + 28;
-            if(!localStorage.getItem('hits')) localStorage.setItem('hits', 184);
+            if(!localStorage.getItem('hits')) localStorage.setItem('hits', 192);
             let h = parseInt(localStorage.getItem('hits')) + Math.floor(Math.random() * 2);
             localStorage.setItem('hits', h);
             document.getElementById('hits-today').innerText = h;
         }
         setInterval(updateStats, 5000);
         updateStats();
+
+        // FAQ Logic
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+        });
     </script>
 </body>
 </html>
-
 
 
